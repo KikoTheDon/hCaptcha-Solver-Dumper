@@ -45,7 +45,7 @@ def Open(Url):
     print("Dumped site-key ->", SiteKey)
 
     # Post all information about the Captcha to 2Captcha's servers so that it can be solved.
-    CaptchaResponse = requests.get("http://2captcha.com/in.php?key=" + API_KEY + "&sitekey=" + SiteKey + "&method=hcaptcha&pageurl=https://smsreceivefree.com/").text
+    CaptchaResponse = requests.get("http://2captcha.com/in.php?key=" + API_KEY + "&sitekey=" + SiteKey + "&method=hcaptcha&pageurl=" + Url).text
 
     print("Captcha Response ->", CaptchaResponse)
     if CaptchaResponse.find("OK") < 0: # Was the Captcha accepted?
